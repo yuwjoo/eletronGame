@@ -5,6 +5,18 @@
     <title>Hello World!</title>
   </head>
   <body>
+    <fieldset>
+      <legend>外挂辅助</legend>
+      <div>
+        <input type="radio" id="huey" name="drone" value="huey" oninput="setConfig(event, 'isSuccess')">
+        <label for="huey">对方回合结束，直接获胜</label>
+      </div>
+  
+      <div>
+        <input type="radio" id="dewey" name="drone" value="dewey" oninput="setConfig(event, 'onlyOneselfSuccess')">
+        <label for="dewey">获胜者只能是自己</label>
+      </div>
+  </fieldset>
     <h1>💖 Hello World!</h1>
     <p>Welcome to your Electron application.</p>
   </body>

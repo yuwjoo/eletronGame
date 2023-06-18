@@ -1,0 +1,12 @@
+.slide.slide-border .slide-container .nav-bar,
+.slide.slide-border .slide-container .viewpage,
+.slide.slide-border .hideball,
+.slide.slide-border .slide-container .user-bar .report,
+.slide.slide-border .slide-container .user-bar .download,
+.slide.slide-border .slide-btn .i-refresh{
+    display: none !important;
+}
+
+.slide.slide-border .slide-container .navigation {
+    font-size: 16px !important;
+}

@@ -1,9 +1,9 @@
 const { app, BrowserWindow } = require("electron");
-// const reLoader = require("electron-reloader"); //热加载
+const useReLoader = require("./hooks/useReLoader"); // 热加载
 const useMainWindow = require("./hooks/useMainWindow"); // 主窗口
 const useProtocol = require("./hooks/useProtocol"); // 自定义通讯协议
 
-// reLoader(module);
+useReLoader(app, module);
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {

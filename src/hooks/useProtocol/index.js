@@ -64,14 +64,14 @@ module.exports = () => {
     const res = await net.fetch(await handleRequest(req), {
       bypassCustomProtocolHandlers: true,
     });
-    return handleResponse(req.url, res);
+    return await handleResponse(req.url, res);
   });
 
   protocol.handle("https", async (req) => {
     const res = await net.fetch(await handleRequest(req), {
       bypassCustomProtocolHandlers: true,
     });
-    return handleResponse(req.url, res);
+    return await handleResponse(req.url, res);
   });
 
   protocol.handle("customfile", (req) => {

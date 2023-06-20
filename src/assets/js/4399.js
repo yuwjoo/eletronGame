@@ -30,26 +30,50 @@ function init() {
   const dom = `
     <fieldset>
       <legend>外挂辅助</legend>
+
       <div>
-        <input type="checkbox" id="huey" name="drone" ${
-          config.isSuccess ? "checked" : ""
-        } oninput="setConfig(event, 'isSuccess')">
-        <label for="huey">对方回合结束，直接获胜</label>
+        <input type="checkbox" id="hideFirstAD" name="hideFirstAD" ${
+          config.hideFirstAD ? "checked" : ""
+        } oninput="setConfig(event.target.checked, 'hideFirstAD')">
+        <label for="hideFirstAD">关闭首屏广告</label>
       </div>
-  
+
       <div>
-        <input type="checkbox" id="dewey" name="drone" ${
-          config.onlyOneselfSuccess ? "checked" : ""
-        } oninput="setConfig(event, 'onlyOneselfSuccess')">
-        <label for="dewey">获胜者只能是自己</label>
+        <input type="checkbox" id="enemyLose" name="enemyLose" ${
+          config.enemyLose ? "checked" : ""
+        } oninput="setConfig(event.target.checked, 'enemyLose')">
+        <label for="enemyLose">对方回合结束，直接获胜</label>
+      </div>
+      
+      <div>
+        <input type="checkbox" id="hideBlackBall" name="hideBlackBall" ${
+          config.hideBlackBall ? "checked" : ""
+        } oninput="setConfig(event.target.checked, 'hideBlackBall')">
+        <label for="hideBlackBall">隐藏黑球，己方需要时自动出现</label>
+      </div>
+      
+      <div>
+        <input type="checkbox" id="onePolePlatformCleaning" name="onePolePlatformCleaning" ${
+          config.onePolePlatformCleaning ? "checked" : ""
+        } oninput="setConfig(event.target.checked, 'onePolePlatformCleaning')">
+        <label for="onePolePlatformCleaning">开启一杆清台模式</label>
+      </div>
+      
+      <div>
+        <input type="number" id="salfPower" value="${config.salfPower}" oninput="setConfig(event.target.value, 'salfPower')">
+        <label for="salfPower">自己击球力度</label>
+      </div>
+
+      <div>
+        <input type="number" id="botPower" value="${config.botPower}" oninput="setConfig(event.target.value, 'botPower')">
+        <label for="botPower">电脑击球力度</label>
       </div>
   </fieldset>
     `;
   content.innerHTML = dom;
 }
 
-function setConfig(event, key) {
-  const value = event.target.checked;
+function setConfig(value, key) {
   window.frames[0].postMessage({ [key]: value }, "*");
   config = {
     ...config,

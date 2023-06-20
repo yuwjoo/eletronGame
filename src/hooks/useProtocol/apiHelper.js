@@ -1,7 +1,11 @@
 const rules = [
   {
+    match: /^https:\/\/www\.4399\.com\/httpsNot301\/AntiindulgenceDisableToolsUTF8\.js/,
+    request: "customfile://assets/js/AntiindulgenceDisableToolsUTF8.js",
+  },
+  {
     match: /res1\.ly\-games\.cn\/h5_4399\/js\/main\.min_/,
-    request: "customfile://assets/js/main.min_f761f093.js",
+    request: "customfile://assets/js/main.min.js",
   },
   {
     match: "https://www.zxwyouxi.com/g/100067877",

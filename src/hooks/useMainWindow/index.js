@@ -6,6 +6,7 @@ module.exports = () => {
   const mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
+    fullscreen: true,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
